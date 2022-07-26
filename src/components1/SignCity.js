@@ -2,7 +2,7 @@ import React from 'react'
 
 function SignCity() {
   return (
-    <div>SignCity</div>
+    <div>City Page</div>
   )
 }
 
