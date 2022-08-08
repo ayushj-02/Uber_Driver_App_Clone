@@ -238,3 +238,7 @@ border: none;}
   border-radius: 10px;
   width: 70%;
 }
+
+.small{
+  font-size: 14px;
+}

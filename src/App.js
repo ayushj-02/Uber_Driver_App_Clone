@@ -5,6 +5,7 @@ import Signup from "./components1/Signup";
 import AccountForgot from "./components1/AccountForgot";
 import OtpPage from "./components1/OtpPage";
 import SignCity from "./components1/SignCity";
+import UberVehicle from "./components1/UberVehicle";
 import './App.css';
 
 const App=()=> {
@@ -17,6 +18,7 @@ const App=()=> {
         <Route path="/otp" element={<OtpPage/>} />
         <Route path="/signup" element={<Signup/>} />
         <Route path="/signupcity" element={<SignCity/>} />
+        <Route path="/uber_vehicle" element={<UberVehicle/>} />
       </Routes>
     </div>
   );
