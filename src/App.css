@@ -263,11 +263,12 @@ border: none;}
 }
 .badge{
   background: #ccc;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: bold;
   display: inline;
   padding: 0.25rem;
   margin-bottom: 20px;
   color: blue;
   border-radius: 5px;
+  width:60px
 }
