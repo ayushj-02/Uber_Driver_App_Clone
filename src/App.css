@@ -284,7 +284,7 @@ border: none;}
   justify-content: space-between;
   align-items: center;
   height:100%;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px  #f4f4f4 solid;
 }
 .content{
   display: flex;
@@ -300,12 +300,12 @@ p.lead-l{
   margin: 0;
   padding: 0 10px;
   font-size: medium;
-  font-weight:900;
+  font-weight:bolder;
 }
 
 p.lead-s{
   margin: 0;
   padding: 5px 10px 0 10px;
   font-size: small;
-  font-weight: bolder;
+  
 }
