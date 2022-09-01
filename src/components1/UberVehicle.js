@@ -22,7 +22,7 @@ import {GrBike} from "react-icons/gr"
       
               {/* Footer */}
               <div className='continue-btn'>
-              <Link to={"/signupcity"} className='button ctn' >Continue </Link>
+              <Link to={"/addprofile"} className='button ctn' >Continue </Link>
             </div>
           </>
         )

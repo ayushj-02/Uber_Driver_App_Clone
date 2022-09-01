@@ -234,7 +234,9 @@ border: none;}
   padding: 1rem;
 
 }
-
+.font-bold{
+  font-weight: bolder;
+}
 .ctn{
   border-radius: 10px;
   width: 80%;
@@ -271,4 +273,39 @@ border: none;}
   color: blue;
   border-radius: 5px;
   width:60px
+}
+
+/* User Profile Page */
+
+.card{
+  /* background: red; */
+  padding:10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height:100%;
+  border-bottom: 1px solid #ddd;
+}
+.content{
+  display: flex;
+}
+.Img{
+  display: inline-block;
+  color:black;
+  font-weight:bolder;
+  margin: 10px;
+  font-size: larger;
+}
+p.lead-l{
+  margin: 0;
+  padding: 0 10px;
+  font-size: medium;
+  font-weight:900;
+}
+
+p.lead-s{
+  margin: 0;
+  padding: 5px 10px 0 10px;
+  font-size: small;
+  font-weight: bolder;
 }
