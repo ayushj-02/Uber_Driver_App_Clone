@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from "react-router-dom";
 import {BiNotepad} from "react-icons/bi"
 import {GrFormNext} from "react-icons/gr"
 
@@ -19,7 +20,8 @@ const AddProfileComp = (props) => {
         </div>
         </div>
         <div className='Img'>
-        <a href='#'><GrFormNext /></a>
+        {/* <a href='#'><GrFormNext /></a> */}
+        <Link to={profile.link}> <GrFormNext /> </Link>
         </div>
     </div>
         ))}

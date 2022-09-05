@@ -4,10 +4,10 @@ import  AddProfileComp from './AddProfileComp';
 
 const AddProfile = () => {
   const[profiles,setProfile]=useState([
-    {text:'Profile Photo', textsmall:'Recommended Next Step'},
-    {text:'Driving Licence - Front', textsmall:'Ready to begin'},
-    {text:'Driving Licence - Back', textsmall:'Ready to begin'},
-    {text:'Registrartion Certificate (RC)', textsmall:'Ready to begin'},
+    {text:'Profile Photo', textsmall:'Recommended Next Step',link:'/profilephoto'},
+    {text:'Driving Licence - Front', textsmall:'Ready to begin',link:'/drivinglicense'},
+    {text:'Driving Licence - Back', textsmall:'Ready to begin',link:'/drivinglicenseBack'},
+    {text:'Registrartion Certificate (RC)', textsmall:'Ready to begin',link:'/registrationcertificate'},
   ])
   return (
     <>

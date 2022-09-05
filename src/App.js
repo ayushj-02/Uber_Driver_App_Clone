@@ -7,6 +7,7 @@ import OtpPage from "./components1/OtpPage";
 import SignCity from "./components1/SignCity";
 import UberVehicle from "./components1/UberVehicle";
 import AddProfile from "./components1/AddProfile";
+import ProfilePhoto from "./components1/ProfilePhoto";
 import './App.css';
 
 const App=()=> {
@@ -21,6 +22,7 @@ const App=()=> {
         <Route path="/signupcity" element={<SignCity/>} />
         <Route path="/uber_vehicle" element={<UberVehicle/>} />
         <Route path="/addprofile" element={<AddProfile/>} />
+        <Route path="/profilephoto" element={<ProfilePhoto/>} />
         
       </Routes>
     </div>
