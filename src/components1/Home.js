@@ -5,22 +5,15 @@ const Home = () => {
   return (
     <>
     <section className='main'>
+      
       <div className='left'>
         <h1>Welcome to the Uber Driver App</h1>
-        <Link to={"/login1"} className='button'>Continue</Link>
-<hr/>
+        <Link to={"/login1"} className='button btn-home'>Continue</Link>
+        <hr/>
+        
         <a className='uber_ride' href='https://www.uber.com'>or ride with Uber</a>
-        {/* <nav>
-          <ul >
-            <li>
-              <Link to={"/page2"} className='button'>Login</Link>
-            </li>
-            <li>
-              <Link to={"/page3"} className="button">Sign Up</Link>
-            </li>
-          </ul>
-        </nav> */}
       </div>
+
       <div className='right'>
         <h1>Uber</h1>
       </div>

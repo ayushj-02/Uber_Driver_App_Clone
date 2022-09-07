@@ -18,46 +18,64 @@ h1{
 p{
   margin: 1rem 0;
 }
-.l-lead{
-  font-size:14px
-}
-.button{
-  display: inline-block;
-  color: white;
-  text-decoration: none;
-  background-color: black;
-  padding: 0.5rem 2rem;
-  margin-bottom: 1rem;
-  width: 80%;
-  font-weight: 1000;
-}
-.btn-light{
-  color:#333;
-  background: #ccc;
-  border-radius: 20px;
-  display: inline-block;
-  width: 50%;
-}
 a{
   text-decoration: none;
 }
-
+a:hover{
+  font-weight: 600;
+}
+.l-lead{
+  font-size:15px;
+  font-weight: bold;
+}
 .p-1{padding: 1.5rem;}
 .p-2{padding: 2rem;}
 .p-3{padding: 3rem;}
-
+.button{
+  display: inline-block;
+  color: #fff;
+  background: #000;
+  text-decoration: none;
+  padding: 0.5rem 2rem;
+  margin: 1rem 0;
+ 
+  font-weight: 1000;
+  transition: all 0.3s ease-in;
+}
+.btn-home{
+  width: 80%;
+}
+.btn-home:hover{
+  background: #333;
+  width:81%;
+}
 .container{
   max-width: 1100px;
   margin: 2rem 0;
   padding: 0 2rem;
   overflow: hidden;
 }
+.btn-light{
+  color:#333;
+  background: #ccc;
+  border-radius: 20px;
+  display: inline-block;
+  /* width: 50%; */
+}
+.btn-dark{
+  background: #000;
+  color:#fff;
+  padding: 0.5rem 2rem;
+  margin-right:  1rem;
+  font-weight: 1000;
+  border:none;
+}
 
-/* Login Page */
 
+/* Home Page  -- Start*/
 .main{
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
 }
 .main div{
   flex:1;
@@ -72,20 +90,25 @@ a{
   align-items: center;
   text-align: center;
   height: 100vh;
+  overflow: hidden;
+  transform: translateY(-1200px);
+  animation: animate1 1.5s  forwards ease-in;
 }
 .right{
-  /* width: 50%;
-  background: url('./images/uber_bg.png') no-repeat center center/cover ;
-  height: 100vh; */
   background: #000;
   color:white;
   display: flex;
   justify-content: center;
-  text-align: center;
   align-items: center;
-  height: 100vh;
   font-size: 4rem;
+  transform: translateY(1200px);
+  animation: animate1 2s  forwards ease-in 0.5s;
 }
+@keyframes animate1 {
+  to{transform: translateY(0px);}
+}
+/* Home Page  -- End */
+
 
 ul{
   list-style: none;
@@ -105,7 +128,8 @@ ul li{
   margin-left: 4rem;
 }
 
-/* Login phonenumber */
+/* Login Page -- Start */
+
 .tel-box{
   display: flex;
   margin: 1rem;
@@ -115,13 +139,14 @@ ul li{
   margin: 1rem;
   width: 60px;
   height: 40px;
+  /* background: red; */
 }
 .flag-img{
   width:60px;
   height: 40px;
+  border:2px solid black;
   position: absolute;
-  border:2px solid #ccc;
-  border-radius:5px
+  border-radius:5px;
 }
 .select-box select{
   font-family: 'Roboto',sans-serif;
@@ -135,7 +160,19 @@ ul li{
   outline: none;
   -webkit-appearance: none;
 }
-
+.tt{
+  font-family: 'Roboto',sans-serif;
+  width: 80px;
+  height:40px;
+  border:2px solid #ccc;
+  outline: none;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
 .tel{
   font-family: 'Roboto',sans-serif;
   width: 100%;
@@ -143,28 +180,47 @@ ul li{
   background: none;
   border:2px solid #ccc;
   outline: none;
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 5px;
+}
+.output{
   margin: 1rem;
+  margin-top: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  display: flex;
+  align-self: center;
+}
+.result{
+  width:auto;
+  padding: 0.25rem;
+  border-radius: 5px;
+  background: green;
+  color:white;
+  font-size: 1rem;
+  margin-left: 1rem;
 }
 
-.next,.prev{
+.next{
   position: absolute;
   bottom: 2rem;
   right: 0;
-  width: 8%;
+  width:auto;
   margin-right: 3rem;
-  text-align: left;
+  text-align: center;
   border-radius:100px;
-}
-@media screen and (max-width:768px){
-  .next,.prev{
-    width: 14%;
-  }
+  color:#fff
 }
 .prev{
   position: absolute;
   bottom: 2rem;
   left: 0;
   margin-left: 3rem;
+  width: auto;
+  text-align: center;
+  border-radius:100px;
+  color:#fff
 }
 
 /* Navbar */
@@ -195,14 +251,7 @@ ul li{
   padding-left: 12px;
   height: 40px;
 }
-.btn-dark{
-  background: #000;
-  color:#fff;
-  padding: 0.5rem 2rem;
-  margin-right:  1rem;
-  font-weight: 1000;
-  border:none;
-}
+
 
 .text-bg{
   background:#ddd;

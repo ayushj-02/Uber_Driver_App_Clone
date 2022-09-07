@@ -9,6 +9,7 @@ import UberVehicle from "./components1/UberVehicle";
 import AddProfile from "./components1/AddProfile";
 import ProfilePhoto from "./components1/ProfilePhoto";
 import './App.css';
+import './AppMobile.css';
 
 const App=()=> {
   return (

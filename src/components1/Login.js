@@ -2,33 +2,39 @@ import React, {Component} from 'react'
 import {Link} from "react-router-dom"
 class Login extends Component{
   state={
-    flagImag:'https://flagpedia.net/data/flags/h80/in.webp',
+    flagImg:'https://flagpedia.net/data/flags/h80/in.webp',
     countryCodeValue:'',
     phone:''
   }
-  selectcountryHandler=e=>{
-    this.setState({countryCodeValue: e.target.value})
+  selectCountryHandler=e=>{
+    this.setState({countryCodeValue: e.target.value} )
   }
+  
   countryFlagHandler=()=>{
-    const select = document.querySelector('#country');
-		this.setState({
-			flagImg: `https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`
-		});
+    const select=document.getElementById('country');
+    this.setState({
+      flagImg:`https://flagpedia.net/data/flags/h80/${select.selectedOptions[0].dataset.countrycode.toLowerCase()}.webp`,
+    })
+  }
+
+  phoneHandler=e=>{
+    this.setState({
+      phone:e.target.value,
+    })
+
   }
   render(){
-
-    return (
-      <>
-      <section className='p-2'>
+    return(
+      <div className="container">
       <h3>What's your phone number or email?</h3>
-  
-        {/* Phone or emial logic */}
-  
-          <div className='tel-box'>
-            <div className='select-box' onChange={this.countryFlagHandler}>
-              <img src={this.state.flagImag} alt="" id="img" className='flag-img text-bg'/>
-              <select id="country_list" onChange={this.selectcountryHandler} defaultValue={this.state.countryCodeValue}>
-                          <option value="" hidden>Select Country</option> 
+
+        <form className="page">
+            <div className="tel-box">
+              <div className="select-box" onChange={this.countryFlagHandler}>
+                <img src={this.state.flagImg} alt="" id="img" className="flag-img" />
+                <select id="country" onChange={this.selectCountryHandler}
+                d >
+                            <option value="" hidden>Select Country</option> 
                           <option data-countryCode="AF" value="93">Afghanistan (+93)</option>
                           <option data-countryCode="AL" value="355">Albania (+355)</option>
                           <option data-countryCode="DZ" value="213">Algeria (+213)</option>
@@ -272,21 +278,23 @@ class Login extends Component{
                           <option data-countryCode="YE" value="967">Yemen (South)(+967)</option>
                           <option data-countryCode="ZM" value="260">Zambia (+260)</option>
                           <option data-countryCode="ZW" value="263">Zimbabwe (+263)</option>
-                        </select>
+                </select>
+              </div>
+              <span className='tt' defaultValue={this.state.countryCodeValue}>{`+${this.state.countryCodeValue}`}</span>
+              <input type="tel" className="tel"  onChange={this.phoneHandler} defaultValue={this.state.phone} placeholder='Enter phone number' />
             </div>
-            <input type="tel" className='tel text-bg'  placeholder="Enter phone number"/>
-          </div>
-          
-  
-        <p className='l-lead'>By proceeding, you consent to get calls,WhatsApp or SMS messages, including by automated means, from Uber ansd its affliates to the nuber provided.</p>
-
+            {/* <div className="output">
+              <h2>Phone Number. :</h2>
+              <span className="result">+{this.state.countryCodeValue}-{this.state.phone}</span>
+            </div> */}
+        </form>
+        
         <Link to={"/account-forgot"} className='button btn-light'>I forgot my account info</Link>
         
-        <Link to={"/"} className='button prev'>Prev</Link>
+        <p className='l-lead'>By proceeding, you consent to get calls,WhatsApp or SMS messages, including by automated means, from Uber ansd its affliates to the nuber provided.</p>
         <Link to = {"/otp"} className='button next'>Next</Link>
-      </section>
-  
-      </>
+
+      </div>
     )
   }
 }
