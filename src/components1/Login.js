@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
 import {Link} from "react-router-dom"
-class Login extends Component{
+import firebase from './firebase'
+class Login extends Component {
   state={
     flagImg:'https://flagpedia.net/data/flags/h80/in.webp',
-    countryCodeValue:'',
+    countryCodeValue:'91',
     phone:''
   }
   selectCountryHandler=e=>{
@@ -17,18 +18,48 @@ class Login extends Component{
     })
   }
 
-  phoneHandler=e=>{
+  phoneHandler=(e)=>{
+    
+    const{name,value} = e.target;
+
     this.setState({
+      [name]:value,
       phone:e.target.value,
     })
-
   }
+  configureCaptcha=()=>{
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
+      'size': 'invisible',
+      'callback': (response) => {
+        this.onSignInSubmit();
+      },
+      defaultCountry: 'IN'
+    });
+  }
+
+  onSignInSubmit=(e)=>{
+    e.preventDefault();
+    this.configureCaptcha()
+    const phoneNumber = this.state.countryCodeValue+this.state.phone;
+    console.log(phoneNumber)
+    const appVerifier = window.recaptchaVerifier;
+    firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+        .then((confirmationResult) => {
+          window.confirmationResult = confirmationResult;
+          console.log('OTP Sent')
+        }).catch((error) => {
+          console.log('ERROR')
+        });
+    
+  }
+
   render(){
     return(
       <div className="container">
       <h3>What's your phone number or email?</h3>
 
-        <form className="page">
+        <form className="page" onSubmit={this.onSignInSubmit}>
+          <div className="sign-in-button"></div>
             <div className="tel-box">
               <div className="select-box" onChange={this.countryFlagHandler}>
                 <img src={this.state.flagImg} alt="" id="img" className="flag-img" />
@@ -281,14 +312,13 @@ class Login extends Component{
                 </select>
               </div>
               <span className='tt' defaultValue={this.state.countryCodeValue}>{`+${this.state.countryCodeValue}`}</span>
-              <input type="tel" className="tel"  onChange={this.phoneHandler} defaultValue={this.state.phone} placeholder='Enter phone number' />
+              <input type="tel" name='mobile' className="tel"  onChange={this.phoneHandler} defaultValue={this.state.phone} placeholder='Enter phone number' required/>
             </div>
             {/* <div className="output">
               <h2>Phone Number. :</h2>
               <span className="result">+{this.state.countryCodeValue}-{this.state.phone}</span>
-            </div> */}
+            </div> */} 
         </form>
-        
         <Link to={"/account-forgot"} className='button btn-light'>I forgot my account info</Link>
         
         <p className='l-lead'>By proceeding, you consent to get calls,WhatsApp or SMS messages, including by automated means, from Uber ansd its affliates to the nuber provided.</p>
@@ -298,5 +328,5 @@ class Login extends Component{
     )
   }
 }
-
 export default Login
+

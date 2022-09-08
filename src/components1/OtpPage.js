@@ -1,14 +1,16 @@
 import React,{useState} from 'react'
-import Navbar from './Navbar'
+import Navbar from './Navbar';
+import Login from './Login';
 import {Link} from "react-router-dom";
 
 const OtpPage=()=> {
   const [otp, setOtp] = useState(new Array(4).fill(""));
   const handleChange = (element, index) => {
-    if (isNaN(element.value)) return false;
+    if (isNaN(element.value)) {
+        alert('Enter OTP')
+    };
 
     setOtp([...otp.map((d, idx) => (idx === index ? element.value : d))]);
-
     //Focus next input
     if (element.nextSibling) {
         element.nextSibling.focus();
@@ -18,8 +20,6 @@ const OtpPage=()=> {
   return (
     <>
       <Navbar/>
-      
-
             <div className="container">
                 <div className="text-center p-2">
                     <h2>Welcome to the Uber Driver App!!!</h2>
@@ -43,12 +43,12 @@ const OtpPage=()=> {
                     <p>OTP Entered - {otp.join("")}</p>
                     <p>
                         <button
-                            className=" btn-dark"
+                            className="btn-dark btn-otp"
                             onClick={e => setOtp([...otp.map(v => "")])}
                         >
                             Clear
                         </button>
-                        <Link className=" btn-dark"
+                        <Link className="btn-dark btn-otp"
                             onClick={e =>
                                 alert("Entered OTP is " + otp.join(""))
                             } to={"/signup"}>Verify OTP </Link>
