@@ -1,17 +1,23 @@
 
-import firebase,{ initializeApp } from "firebase/compat/app";
-import 'firebase/compat/auth'
+import firebase from "firebase/app";
+import 'firebase/auth';
 
-var firebaseConfig = {
-    apiKey: "AIzaSyD9aSwLgt22OonWyNHpYgynYeqvkXrLbNE",
-    authDomain: "uber-driver-otp-auth.firebaseapp.com",
-    projectId: "uber-driver-otp-auth",
-    storageBucket: "uber-driver-otp-auth.appspot.com",
-    messagingSenderId: "780819275867",
-    appId: "1:780819275867:web:9b4929203d42e2ec3f9f7e"
-  };
-  
-  // Initialize Firebase
-  firebase.initializeApp(firebaseConfig);
 
-  export default firebase;
+  // Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDPnGzjP__P_2SxmVYZN3I63kJ0yi7lgA8",
+  authDomain: "uber-driver-clone-auth.firebaseapp.com",
+  projectId: "uber-driver-clone-auth",
+  storageBucket: "uber-driver-clone-auth.appspot.com",
+  messagingSenderId: "957240572940",
+  appId: "1:957240572940:web:84b6c090d84d005d72c229"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+export default app; 
